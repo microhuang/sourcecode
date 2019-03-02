@@ -25,6 +25,7 @@ public class MvcConfigurer implements WebMvcConfigurer {
 		registry.addInterceptor(new SessionHandlerInterceptor()).addPathPatterns("/user/**");
 	}
 	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/api/**").allowedOrigins("http://domain2.com").allowedMethods("POST","GET");
 	}
 	
 	public void addFormatters(FormatterRegistry registry) {
